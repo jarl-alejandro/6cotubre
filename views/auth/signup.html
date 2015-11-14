@@ -1,0 +1,13 @@
+{% extends "../base.html" %}
+
+{% block content %}
+  <h2>Registrate</h2>
+  <form action="/signup" method="POST">
+    <input type="text" name="name" placeholder="name" />
+    <input type="text" name="lastName" placeholder="lastName" />
+    <input type="number" name="cedula" placeholder="cedula" />
+    <input type="email" name="email" placeholder="email" />
+    <input type="text" name="password" placeholder="password" />
+    <input type="submit" value="Registrate" />
+  </form>
+{% endblock %}
