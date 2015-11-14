@@ -2,9 +2,24 @@
 
 {% block content %}
   <h2>Login</h2>
-  <form action="/login" method="POST">
-    <input type="email" name="email" />
-    <input type="password" name="password" />
-    <input type="submit" value="Inciar sesion" />
-  </form>
+  <article class="forms">
+    <form action="/login" method="POST">
+
+      <div class="group__inputs">
+        <input type="email" name="email" required />
+        <label>Correo Electronico</label>
+        <span class="bar"></span>
+        <span class="highlight"></span>
+      </div>
+
+      <div class="group__inputs">
+        <input type="password" name="password" required />
+        <label>Contraseña</label>
+        <span class="bar"></span>
+        <span class="highlight"></span>
+      </div>
+
+      <input type="submit" value="Inciar sesion" />
+    </form>
+  </article>
 {% endblock %}
