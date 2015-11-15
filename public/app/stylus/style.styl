@@ -1,10 +1,58 @@
 @import "nib"
-@import "normalize.styl"
 @import "color.styl"
 @import "landing.styl"
 @import "navbar.styl"
 @import "slider.styl"
 @import "forms.styl"
 
+body
+  background #eee
+
 .accordian
   margin 0 auto
+
+.full__heigth
+  height 100%
+
+.forms__header
+  background url("../img/juramento.jpg")
+  width 100%
+  height 9em
+  background-size cover
+  box-shadow 0px 1px 1.5px rgba(black,.6)
+  display flex
+  justify-content center
+  align-items center
+
+.register
+  background teal
+  margin 1em auto
+  text-decoration none
+
+.title__header_form
+  font-size 3rem
+  color white
+  text-shadow 0px 1px 1.5px rgba(black,.6)
+
+.none
+  display none
+
+.next
+  margin-bottom 1em
+  text-decoration none
+
+.start__session
+  background transparent
+  color white
+  border-radius 2px
+  padding 1em 0
+  text-decoration none
+  font-size 1.5em
+  margin 1em auto
+  border 1px solid white
+  display flex
+  padding 0.5em 1em 0.5em 2em
+  width 6em
+  transition all ease .1s
+  &:hover
+    background rgba(white,.5)

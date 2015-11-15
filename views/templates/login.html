@@ -1,0 +1,23 @@
+<header class="forms__header">
+  <h2 class="title__header_form">Iniciar sesión</h2>
+</header>
+<form action="/login" method="POST">
+  <div class="group__inputs">
+    <input type="email" name="email" required />
+    <i class="material-icons icon__input">account_circle</i>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>Correo Electronico</label>
+  </div>
+  <div class="group__inputs">
+    <input type="password" name="password" required />
+    <i class="material-icons icon__input">https</i>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>Contraseña</label>
+  </div>
+  <button type="submit" class="btn__send">
+    <span>Iniciar sesión</span>
+  </button>
+  <a href="/signup" class="btn__send register">Registrate</a>
+</form>

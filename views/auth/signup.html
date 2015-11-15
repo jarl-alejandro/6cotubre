@@ -1,13 +1,68 @@
 {% extends "../base.html" %}
 
 {% block content %}
-  <h2>Registrate</h2>
-  <form action="/signup" method="POST">
-    <input type="text" name="name" placeholder="name" />
-    <input type="text" name="lastName" placeholder="lastName" />
-    <input type="number" name="cedula" placeholder="cedula" />
-    <input type="email" name="email" placeholder="email" />
-    <input type="text" name="password" placeholder="password" />
-    <input type="submit" value="Registrate" />
-  </form>
+  <article class="forms full__heigth" style="margin:5em auto">
+    <header class="forms__header">
+      <h2 class="title__header_form">Registrate</h2>
+    </header>
+    <form action="/signup" method="POST">
+
+      <div class="fisrt">
+        <div class="group__inputs">
+          <input type="email" name="email" required />
+          <i class="material-icons icon__input">account_circle</i>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Correo Electronico</label>
+        </div>
+        <div class="group__inputs">
+          <input type="password" name="password" required />
+          <i class="material-icons icon__input">https</i>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Contraseña</label>
+        </div>
+
+        <div class="group__inputs">
+          <input type="password" name="password2" required />
+          <i class="material-icons icon__input">https</i>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Repita la contraseña</label>
+        </div>
+        <button class="btn__send next">Siguiente</button>
+      </div>
+
+      <div class="next none">
+        <div class="group__inputs">
+          <input type="text" name="name" required />
+          <i class="material-icons icon__input">account_circle</i>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Nombre</label>
+        </div>
+
+        <div class="group__inputs">
+          <input type="text" name="lastName" required />
+          <i class="material-icons icon__input">https</i>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Apellido</label>
+        </div>
+        <div class="group__inputs">
+          <input type="text" name="cedula" required />
+          <i class="material-icons icon__input">https</i>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Cedula</label>
+        </div>
+        <button type="submit" class="btn__send">
+          <span>Registrate</span>
+        </button>
+      </div>
+    </form>
+    <a href="/login" class="btn__send register">Iniciar sesión</a>
+
+  </article>
+
 {% endblock %}
