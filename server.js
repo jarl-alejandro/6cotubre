@@ -17,6 +17,7 @@ const db = "mongodb://localhost/6octubre"
 mongoose.connect(db, onDBListening)
 
 const sessionMiddleware = session({
+	 store: redisStore,
 	secret: 'keyboard cat',
 	resave: false,
 	saveUninitialized: true
