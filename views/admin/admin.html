@@ -1,7 +1,30 @@
 {% extends "../base.html" %}
 
 {% block content %}
-  <h1>Welcome {{ user.name }}</h1>
-  <a href="/logout">Salir</a>
+  <header>
+    <h1>Welcome {{ user.name }}</h1>
+    <a href="/logout">Salir</a>
+  </header>
+
+  <section id="alumnoForm" class="forms full__heigth none" style="padding-bottom: 1em;">
+    <form action="/login" method="POST">
+      <div class="group__inputs">
+        <input type="email" name="email" required />
+        <i class="material-icons icon__input">account_circle</i>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Correo Electronico</label>
+      </div>
+      <button type="submit" class="btn__send">
+        <span>Iniciar sesión</span>
+      </button>
+    </form>
+  </section>
+
+  <section class="admin">
+    <h1>Este es al admin</h1>
+    <button id="alumno" class="alumno">Alumno</button>
+    <button id="profesor" class="">Profesor</button>
+  </section>
 
 {% endblock %}

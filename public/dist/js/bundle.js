@@ -9211,27 +9211,39 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
-(function(){
-  'use strict'
+(function () {
+  'use strict';
 
-  const $ = require("jquery")
+  const $ = require("jquery");
 
-  const $next = $(".next")
-  const $startSession = $(".start__session")
+  const $next = $(".next");
+  const $startSession = $(".start__session");
+  const $alumno = $("#alumno");
+  const $alumnoForm = $("#alumnoForm");
 
-  $next.on("click", function(e){
-    e.preventDefault()
+  function efectsForm(fOut, fIn) {
+    $(fOut).fadeOut();
+    $(fIn).fadeIn();
+  }
 
-    $(".fisrt").fadeOut()
-    $(".next").fadeIn()
-  })
+  $next.on("click", function (e) {
+    e.preventDefault();
+    efectsForm(".next", ".fisrt");
+  });
 
-  $startSession.on("click", function(e){
-    e.preventDefault()
-    $(".forms").addClass("active__pop")
-  })
+  $alumno.on("click", function (e) {
+    e.preventDefault();
+    //efectsForm(".admin", "#alumnoForm")
 
+    $(".admin").fadeToggle('fast', function () {
+      $("#alumnoForm").fadeIn();
+    });
+  });
 
-})()
+  $startSession.on("click", function (e) {
+    e.preventDefault();
+    $(".forms").addClass("active__pop");
+  });
+})();
 
 },{"jquery":1}]},{},[2]);
