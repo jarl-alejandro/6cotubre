@@ -48,8 +48,13 @@
     if(name === "" || password === "" || password2 === ""){
       alert("campos vacios")
     }
-    else
-      efectsForm(".fisrt", ".next__form")
+    else{
+      if(password == password2){
+        efectsForm(".fisrt", ".next__form")
+      }
+      else
+      alert("contraseña incorrecta!")
+    }
   })
 
   $startSession.on("click", function(e){

@@ -9260,11 +9260,11 @@ return jQuery;
 
     if (name === "" || password === "" || password2 === "") {
       alert("campos vacios");
-    } else efectsForm(".fisrt", ".next__form");
-
-    if (password === password2 && password != "" && password2 != "") {
-      efectsForm(".fisrt", ".next__form");
-    } else alert("contraseña incorrecta");
+    } else {
+      if (password == password2) {
+        efectsForm(".fisrt", ".next__form");
+      } else alert("contraseña incorrecta!");
+    }
   });
 
   $startSession.on("click", function (e) {
