@@ -4,27 +4,139 @@
   <header>
     <h1>Welcome {{ user.name }}</h1>
     <a href="/logout">Salir</a>
+    <button id="atras">atras</button>
   </header>
 
   <section id="alumnoForm" class="forms full__heigth none" style="padding-bottom: 1em;">
-    <form action="/login" method="POST">
+    <form id="newAlumno" method="POST">
       <div class="group__inputs">
-        <input type="email" name="email" required />
+        <input type="email" id="emailAlumno" required />
         <i class="material-icons icon__input">account_circle</i>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Correo Electronico</label>
       </div>
+      <div class="group__inputs">
+        <input type="text" id="nameAlumno" required />
+        <i class="material-icons icon__input">account_circle</i>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Nombre</label>
+      </div>
+      <div class="group__inputs">
+        <input type="text" id="lastNameAlumno" required />
+        <i class="material-icons icon__input">account_circle</i>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Apellido</label>
+      </div>
+      <div class="group__inputs">
+        <input type="number" id="cedulaAlumno" required />
+        <i class="material-icons icon__input">account_circle</i>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Cedula</label>
+      </div>
+      <div class="group__inputs">
+        <select class="" id="courseAlumno">
+          <option value="8vo">8vo</option>
+          <option value="9no">9no</option>
+          <option value="10mo">10mo</option>
+          <option value="1ro">1ro</option>
+          <option value="2do">2do</option>
+          <option value="3ro">3ro</option>
+        </select>
+        <i class="material-icons icon__input">account_circle</i>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+      </div>
+      <div class="group__inputs">
+        <select class="" id="parallelAlumno">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </select>
+        <i class="material-icons icon__input">account_circle</i>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+      </div>
+      <input type="hidden" id="typeAlumno" value="alumno">
       <button type="submit" class="btn__send">
-        <span>Iniciar sesión</span>
+        <span>Registrar alumno</span>
       </button>
     </form>
   </section>
+
+  <section id="profesorForm" class="forms full__heigth none" style="padding-bottom: 1em;">
+    <form method="POST" id="newProfesor">
+      <div class="group__inputs">
+        <input type="email" id="emailProfesor" required />
+        <i class="material-icons icon__input">account_circle</i>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Correo Electronico</label>
+      </div>
+
+      <div class="group__inputs">
+        <input type="text" id="nameProfesor" required />
+        <i class="material-icons icon__input">account_circle</i>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Nombre</label>
+      </div>
+
+      <div class="group__inputs">
+        <input type="text" id="lastNameProfesor" required />
+        <i class="material-icons icon__input">account_circle</i>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Apellido</label>
+      </div>
+
+      <div class="group__inputs">
+        <input type="number" id="cedulaProfesor" required />
+        <i class="material-icons icon__input">account_circle</i>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Cedula</label>
+      </div>
+
+      <input type="hidden" id="typeProfesor" value="profesor">
+      <button type="submit" class="btn__send">
+        <span>Registrar profesor</span>
+      </button>
+    </form>
+  </section>
+
+
 
   <section class="admin">
     <h1>Este es al admin</h1>
     <button id="alumno" class="alumno">Alumno</button>
     <button id="profesor" class="">Profesor</button>
+
+    <section id="usuariosRegistrados">
+      {% for usuario in usuarios %}
+        {% if usuario.type == "alumno" %}
+          <article class="alumnos">
+            <h2>Alumnos</h2>
+            <hr>
+            <h3>{{ usuario.name }}</h3>
+            <h4>{{ usuario.course }} {{ usuario.parallel }}</h4>
+            <hr>
+          </article>
+        {% endif %}
+        <br><br>
+        {% if usuario.type == "profesor" %}
+          <article class="profesores">
+            <h2>Profesor</h2>
+            <hr>
+            <h3>{{ usuario.name }}</h3>
+            <hr>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </section>
   </section>
 
 {% endblock %}
