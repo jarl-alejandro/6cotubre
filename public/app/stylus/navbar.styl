@@ -2,19 +2,30 @@
 
 
 .header
-  background-color primary-color
-  box-shadow 0px 1px 1.5px rgba(black,.6)
+  display flex
+  background-color white
+  box-shadow 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+  border-bottom 1px solid primary-text-color
 
-.menu
+.nav__header
+  width 50%
+
+.menu__header
   margin 0
   display flex
-  justify-content center
+  justify-content flex-end
 
-.item
+.item__menu
   list-style none
-  padding 1em
+  padding 3em 1em 1em 1em
   &:hover
-    background rgba(#ffcd38,.6)
+    border-bottom 3px solid primary-text-color
   a
-    color white
+    color black
     text-decoration none
+.logo
+  width 50%
+  img
+    width 5em
+    height 4em
+    padding 0.2em
